@@ -1,0 +1,6 @@
+{
+  "editor.semanticHighlighting.enabled": true,
+  "go-template.patterns": [
+    "**/*.tmpl",
+  ],
+}
