@@ -1,7 +1,9 @@
+{{- $machineContext := promptChoiceOnce . "machineContext" "Machine context" (list "personal" "work") -}}
 {{- $gitName := promptStringOnce . "gitName" "Git Name" -}}
 {{- $gitEmail := promptStringOnce . "gitEmail" "Git Email address" -}}
 
 
 [data]
+  machineContext = {{ $machineContext | quote }}
   gitName = {{ $gitName | quote }}
   gitEmail = {{ $gitEmail | quote }}
