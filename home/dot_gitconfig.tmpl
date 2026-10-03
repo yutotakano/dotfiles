@@ -1,0 +1,49 @@
+[core]
+  hideDotFiles = false
+  pager = delta
+
+{{ if eq .chezmoi.os "windows" }}
+  # Windows-specific settings
+  editor = micro
+  autocrlf = true
+  longpaths = true
+  symlinks = false
+{{ end }}
+
+[alias]
+  conflicts = diff --name-only --diff-filter=U
+  branches = for-each-ref --sort=-committerdate --format='%(refname:short) - (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads/
+  statsu = status
+
+{{ if eq .data.machineContext "personal" }}
+# Allow hooks to run everywhere for personal machines
+[safe]
+  directory = *
+{{ end }}
+
+[user]
+  name = {{ .data.gitName }}
+  email = {{ .data.gitEmail }}
+
+# Overleaf needs to explicitly set credential provider
+[credential "https://git.overleaf.com"]
+  provider = generic
+
+[pull]
+  ff = only
+  rebase = false
+
+[blame]
+  color = repeatedLines
+
+[color.blame]
+  repeatedLines = black
+
+[init]
+  defaultBranch = main
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
