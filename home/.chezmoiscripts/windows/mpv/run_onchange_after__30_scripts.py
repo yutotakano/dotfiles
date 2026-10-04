@@ -15,3 +15,15 @@ subprocess.run(
     ],
     check=True,
 )
+
+subprocess.run(
+    [
+        "git",
+        "apply",
+        os.path.expandvars(
+            r"%appdata%\mpv\scripts\prevent_error_with_one_comment.patch"
+        ),
+    ],
+    cwd=os.path.expandvars(r"%appdata%\mpv\scripts\mpv-twitch-chat"),
+    check=True,
+)

@@ -1,0 +1,26 @@
+diff --git a/main.lua b/main.lua
+index eaeb499..915178e 100644
+--- a/main.lua
++++ b/main.lua
+@@ -94,6 +94,8 @@ local function load_twitch_chat(is_new_session)
+         return
+     end
+ 
++    mp.msg.error(twitch_video_id)
++
+     local request_body = {
+         ['operationName'] = 'VideoCommentsByOffsetOrCursor',
+         ['variables'] = {
+@@ -145,6 +147,12 @@ local function load_twitch_chat(is_new_session)
+         return
+     end
+ 
++    -- Prevent error if there is only one comment
++    if next(comments) == nil then
++        mp.osd_message("0 comments on this VOD", 5)
++        return
++    end
++
+     twitch_cursor = comments[1].cursor
+     curr_segment = next_segment
+     next_segment = ''
