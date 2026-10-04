@@ -7,6 +7,8 @@
 {{ $data | toToml }}
 
 [diff]
-  command = "git"
-  args = ["-c", "core.autocrlf=false", "diff", "--no-index", "--ignore-all-space", "--ignore-blank-lines"]
   pager = "delta"
+
+[interpreters.py]
+  command = "uv"
+  args = ["run", "--script"]

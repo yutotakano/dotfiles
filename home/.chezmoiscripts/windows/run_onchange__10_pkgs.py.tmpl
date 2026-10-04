@@ -1,0 +1,118 @@
+# System Package Installer for Windows
+
+import subprocess
+
+basic_packages = [
+    "Microsoft.VCRedist.2015+.x64",
+    "Git.Git",
+    "GitHub.cli",
+    "sharkdp.fd",
+    "junegunn.fzf",
+    "zyedidia.micro",
+    "Starship.Starship",
+    "Microsoft.Coreutils",
+    "ajeetdsouza.zoxide",
+    "chrisant996.Clink",
+    "Docker.DockerDesktop",
+    "Microsoft.VisualStudioCode",
+    "WiresharkFoundation.Wireshark",
+    "7zip.7zip",
+    "SumatraPDF.SumatraPDF",
+    "IrfanSkiljan.IrfanView",
+    "Kubernetes.kubectl",
+    "wagoodman.dive",
+    "XAMPPRocky.Tokei",
+]
+
+context_specific_packages = {
+    "personal": [
+        "valinet.ExplorerPatcher",
+        "Gyan.FFmpeg",
+        "Martchus.syncthingtray",
+        "Microsoft.DotNet.DesktopRuntime.8",
+        # rem Needed for Minecraft among other things
+        "Microsoft.OpenJDK.25",
+        "Microsoft.OpenJDK.21",
+        "ImageMagick.ImageMagick",
+        "WinFsp.WinFsp",
+        "SSHFS-Win.SSHFS-Win",
+        "Typst.Typst",
+        "Spotify.Spotify",
+        "Discord.Discord",
+        "PrismLauncher.PrismLauncher",
+        "Doist.Todoist",
+        "BrickLink.Studio",
+        "BrickLink.PartDesigner",
+        "OBSProject.OBSStudio",
+        "High-Logic.MainType",
+        "Wacom.WacomTabletDriver",
+        "Valve.Steam",
+        "xanderfrangos.twinkletray",
+        "Zoom.Zoom.EXE",
+        "Canva.Affinity",
+        # rem Needed for OIDC for kubectl
+        "Kubernetes.krew",
+    ]
+}
+
+succeeded_packages: list[str] = []
+failed_packages: list[str] = []
+
+print("Installing basic packages...")
+
+for package in basic_packages:
+    print(f"Installing {package}...")
+
+    try:
+        subprocess.run(["winget", "install", "-e", "--id", package], check=True)
+        succeeded_packages.append(package)
+    except subprocess.CalledProcessError as e:
+        if e.returncode == 2316632107:
+            print(f"{package} is already installed.")
+            succeeded_packages.append(package)
+        else:
+            print(f"Failed to install {package}: {e}")
+            failed_packages.append(package)
+
+context = "{{ .data.machineContext }}"
+
+if context not in context_specific_packages:
+    print(f"No context-specific packages defined for context '{context}'.")
+else:
+    print(f"Installing context-specific packages for context '{context}'...")
+
+    for package in context_specific_packages[context]:
+        print(f"Installing {package}...")
+
+        try:
+            subprocess.run(["winget", "install", "-e", "--id", package], check=True)
+            succeeded_packages.append(package)
+        except subprocess.CalledProcessError as e:
+            if e.returncode == 2316632107:
+                print(f"{package} is already installed.")
+                succeeded_packages.append(package)
+            else:
+                print(f"Failed to install {package}: {e}")
+                failed_packages.append(package)
+
+print("Retrying failed packages...")
+
+for package in failed_packages[:]:
+    print(f"Retrying {package}...")
+
+    try:
+        subprocess.run(["winget", "install", "-e", "--id", package], check=True)
+        succeeded_packages.append(package)
+        failed_packages.remove(package)
+    except subprocess.CalledProcessError as e:
+        if e.returncode == 2316632107:
+            print(f"{package} is already installed.")
+            succeeded_packages.append(package)
+        else:
+            print(f"Failed to install {package}: {e}")
+
+print(f"Installation complete: {len(succeeded_packages)} succeeded.")
+if failed_packages:
+    print(f"{len(failed_packages)} failed:")
+    for package in failed_packages:
+        print(f" - {package}")
