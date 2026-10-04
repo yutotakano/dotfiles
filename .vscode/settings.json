@@ -3,4 +3,25 @@
   "go-template.patterns": [
     "**/*.tmpl",
   ],
+  // Highlight by the base type under .tmpl
+  "files.associations": {
+    "*.toml.tmpl": "toml",
+    "*.yaml.tmpl": "yaml",
+    "*.yml.tmpl": "yaml",
+    "*.json.tmpl": "jsonc",
+    "*.sh.tmpl": "shellscript",
+    "*.bash.tmpl": "shellscript",
+    "*.zsh.tmpl": "shellscript",
+    "*.ps1.tmpl": "powershell",
+    "*.lua.tmpl": "lua",
+    "*.py.tmpl": "python",
+    "*.ini.tmpl": "ini",
+    "*.conf.tmpl": "ini",
+    "*.xml.tmpl": "xml",
+    "*.md.tmpl": "markdown",
+    "*gitconfig.tmpl": "properties",
+    "*bashrc.tmpl": "shellscript",
+    "*zshrc.tmpl": "shellscript",
+    "*profile.tmpl": "shellscript",
+  },
 }
