@@ -1,6 +1,7 @@
 {{ if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
 .wslconfig
+AppData/**
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
