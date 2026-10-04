@@ -1,8 +1,9 @@
 {{ if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
+AppData/**
 .wslconfig
 .config/micro/**
-AppData/**
+.inputrc
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
