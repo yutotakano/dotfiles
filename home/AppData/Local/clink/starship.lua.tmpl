@@ -1,2 +1,2 @@
-os.setenv('STARSHIP_CONFIG', '{{ .rawHomeDir }}\\.starship\\starship.toml')
+os.setenv('STARSHIP_CONFIG', '{{ .chezmoi.rawHomeDir | replace "\\" "\\\\" }}\\.starship\\starship.toml')
 load(io.popen('starship init cmd'):read("*a"))()
