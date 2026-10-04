@@ -3,6 +3,12 @@
 {{- $_ := set $data "gitName" (promptStringOnce .data "gitName" "Git Name") -}}
 {{- $_ := set $data "gitEmail" (promptStringOnce .data "gitEmail" "Git Email address") -}}
 
+encryption = "age"
+
+[age]
+  identity = "{{ .chezmoi.homeDir }}/.config/chezmoi/key.txt"
+  recipient = "age18zf87k00tm4dwve3slnt2n4fejgr7gscqjuqe6rsgklwzmxvdyzsxk05mk"
+
 [data.data]
 {{ $data | toToml }}
 
