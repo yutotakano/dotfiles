@@ -1,13 +1,20 @@
 [tools]
-cmake = "latest"
 node = "24"
 "pipx:git-imerge" = "latest"
-python = "3.14"
 uv = "0.11.26"
 yarn = "1"
+
+{{ if eq .chezmoi.os "window" }}
+# Install cmake via mise on Windows, but on other OSes use standard pkgmgr
+cmake = "latest"
+
+# Install global python on Windows via mise
+# On Mac we use pyenv + system, on Linux we use system pkgmgr
+python = "3.14"
 
 [settings]
 # Needs to be set to "file" until https://github.com/jdx/mise/discussions/10663
 # is open. But exe is needed for rust for the IDE to pick it up, since otherwise
 # it complains that the shim script is not a valid Win32 program
 windows_shim_mode = "file"
+{{ end }}
