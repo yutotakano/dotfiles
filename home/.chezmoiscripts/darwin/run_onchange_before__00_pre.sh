@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Install homebrew and absolutely bare minimum for the next step
 
@@ -18,4 +18,5 @@ else
 fi
 
 brew install mise
+mise install
 exit 0

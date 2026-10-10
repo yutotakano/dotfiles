@@ -1,0 +1,62 @@
+#!/bin/bash
+# System Package Installer for darwin
+
+# Tools
+brew install git
+brew install git-filter-repo
+brew install gh
+brew install fzf
+brew install ripgrep
+brew install yq
+brew install jq
+
+# Extra tools
+brew install git-delta
+brew install hwatch
+brew install shellcheck
+brew install kubernetes-cli@1.32
+brew install zoxide
+
+# Build tools
+brew install cmake
+brew install gcc
+brew install tmux
+brew install llvm@13
+
+# {{ if eq .data.machineContext "personal" }}
+
+brew install typst
+brew install speedtest-cli
+brew install tesseract
+brew install pandoc
+brew install oauth-toolkit
+brew install poppler
+brew install openconnect
+brew install mole
+brew install qemu
+brew install hugo
+brew install helm
+brew install kubectl-cnpg
+brew install int128/kubelogin/kubelogin
+brew install mpv
+brew install kopia
+brew install graphviz
+brew install go
+brew install gradle
+brew install maven
+brew install meson
+brew install nghttp2
+brew install dysk
+brew install pngpaste
+brew install kubectx
+brew install picocom
+# Docker replacement and docker clients
+brew install colima
+brew install docker
+brew install docker-compose
+
+# {{ end }}
+
+# {{ if eq .data.machineContext "work" }}
+
+# {{ end }}
