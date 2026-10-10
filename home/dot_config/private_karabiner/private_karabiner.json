@@ -1,0 +1,530 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "F (Ctrl)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.vmware\\.fusion$",
+                                            "^org\\.gnu\\.emacs$",
+                                            "^org\\.gnu\\.Emacs$",
+                                            "^com\\.jetbrains",
+                                            "^com\\.microsoft\\.VSCode",
+                                            "^com\\.vscodium$",
+                                            "^com\\.sublimetext\\.3$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.ScooterSoftware",
+                                            "^dev\\.zed\\.Zed$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.alacritty$",
+                                            "^io\\.alacritty$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Win [Open Spotlight] [Always] (Not for build-in keyboard)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_command" }],
+                                "to_if_alone": [{ "apple_vendor_keyboard_key_code": "spotlight" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "A (Ctrl)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.vmware\\.fusion$",
+                                            "^org\\.gnu\\.emacs$",
+                                            "^org\\.gnu\\.Emacs$",
+                                            "^com\\.jetbrains",
+                                            "^com\\.vscodium$",
+                                            "^com\\.sublimetext\\.3$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.ScooterSoftware",
+                                            "^dev\\.zed\\.Zed$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.alacritty$",
+                                            "^io\\.alacritty$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Enter (Ctrl)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.vmware\\.fusion$",
+                                            "^org\\.gnu\\.emacs$",
+                                            "^org\\.gnu\\.Emacs$",
+                                            "^com\\.jetbrains",
+                                            "^com\\.microsoft\\.VSCode",
+                                            "^com\\.vscodium$",
+                                            "^com\\.sublimetext\\.3$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.ScooterSoftware",
+                                            "^dev\\.zed\\.Zed$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.alacritty$",
+                                            "^io\\.alacritty$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Delete (Ctrl)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.vmware\\.fusion$",
+                                            "^org\\.gnu\\.emacs$",
+                                            "^org\\.gnu\\.Emacs$",
+                                            "^com\\.jetbrains",
+                                            "^com\\.microsoft\\.VSCode",
+                                            "^com\\.vscodium$",
+                                            "^com\\.sublimetext\\.3$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.ScooterSoftware",
+                                            "^dev\\.zed\\.Zed$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.alacritty$",
+                                            "^io\\.alacritty$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Backspace (Ctrl)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.vmware\\.fusion$",
+                                            "^org\\.gnu\\.emacs$",
+                                            "^org\\.gnu\\.Emacs$",
+                                            "^com\\.jetbrains",
+                                            "^com\\.microsoft\\.VSCode",
+                                            "^com\\.vscodium$",
+                                            "^com\\.sublimetext\\.3$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.ScooterSoftware",
+                                            "^dev\\.zed\\.Zed$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.alacritty$",
+                                            "^io\\.alacritty$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ],
+                                        "file_paths": ["Chrome Remote Desktop\\.app"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": ["control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "L (Win) [Lock Screen] [Always] (Not for built-in keyboard)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": ["control", "command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change left control to behave as command in all apps except for iTerm 2",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.googlecode\\.iterm2"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {}
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl + LR Keys to Option + LR Keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Backspace/Delete => Option+(Fn)+Delete (Remove a whole word ahead or behind)",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder",
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^org\\.macports\\.X11$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.finder",
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^org\\.macports\\.X11$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 16193,
+                        "vendor_id": 1266
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_alt" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 641,
+                        "vendor_id": 1452
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "grave_accent_and_tilde" },
+                            "to": [{ "key_code": "grave_accent_and_tilde" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 16193,
+                        "vendor_id": 3426
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
