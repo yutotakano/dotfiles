@@ -1,7 +1,7 @@
 {{- $data := dict -}}
-{{- $_ := set $data "machineContext" (promptChoiceOnce .data "machineContext" "Machine context" (list "personal" "work")) -}}
-{{- $_ := set $data "gitName" (promptStringOnce .data "gitName" "Git Name") -}}
-{{- $_ := set $data "gitEmail" (promptStringOnce .data "gitEmail" "Git Email address") -}}
+{{- $_ := set $data "machineContext" (promptChoiceOnce . "data.machineContext" "Machine context" (list "personal" "work")) -}}
+{{- $_ := set $data "gitName" (promptStringOnce . "data.gitName" "Git Name") -}}
+{{- $_ := set $data "gitEmail" (promptStringOnce . "data.gitEmail" "Git Email address") -}}
 
 encryption = "age"
 
