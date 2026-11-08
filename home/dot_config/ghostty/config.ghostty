@@ -1,0 +1,9 @@
+font-family = FiraCode Nerd Font
+theme = OneHalfDark_DarkerBG
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+macos-titlebar-proxy-icon = hidden
+macos-icon = official
+background-opacity = 0.97
+background-blur = 20
