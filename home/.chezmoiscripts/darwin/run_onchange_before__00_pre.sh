@@ -17,6 +17,7 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+brew update
 brew install mise
 mise install
 exit 0
