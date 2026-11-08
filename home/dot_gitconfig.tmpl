@@ -18,10 +18,21 @@
 
 [alias]
   conflicts = diff --name-only --diff-filter=U
-  branches = for-each-ref --sort=-committerdate --format='%(refname:short) - (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads/
+  # branches = for-each-ref --sort=-committerdate --format='%(refname:short) - (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads/
   statsu = status
   stauts = status
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+  branches = "!f() { \
+        base=${1:-master}; \
+        if [ -t 1 ]; then color=always; else color=never; fi; \
+        git for-each-ref --sort=-committerdate --color=$color \
+            --format=\"%(ahead-behind:$base) %(refname:short) - (%(color:green)%(committerdate:relative)%(color:reset))\" \
+            refs/heads/ \
+        | awk -v c=$color '{ \
+            if (c == \"always\") { g=\"\\033[32m\"; r=\"\\033[31m\"; z=\"\\033[0m\" } \
+            s = ($1 == 0) ? g \"merged\" z : r \"not merged\" z; \
+            $1=$2=\"\"; sub(/^  /, \"\"); print $0 \" [\" s \"]\" }'; \
+    }; f"
 
 {{ if eq .data.machineContext "personal" }}
 # Allow hooks to run everywhere for personal machines
